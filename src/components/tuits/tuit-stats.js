@@ -1,6 +1,6 @@
 import React from "react";
 
-const TuitStats = ({tuit, likeTuit = () => {}}) => {
+const TuitStats = ({tuit, likeTuit = () => {}, bookmark = () => {}}) => {
     return (
       <div className="row mt-2">
         <div className="col">
@@ -27,6 +27,9 @@ const TuitStats = ({tuit, likeTuit = () => {}}) => {
         <div className="col">
           <i className="far fa-inbox-out"></i>
         </div>
+          <div className="col">
+              <i onClick={() => bookmark(tuit)} className="fa-regular fa-bookmark "/>
+          </div>
       </div>
     );
 }
