@@ -4,7 +4,7 @@ import TuitImage from "./tuit-image";
 import TuitVideo from "./tuit-video";
 import {useNavigate, Link} from "react-router-dom";
 
-const Tuit = ({tuit, deleteTuit, likeTuit}) => {
+const Tuit = ({tuit, deleteTuit, likeTuit, bookmarkTuit}) => {
     const navigate = useNavigate();
     const daysOld = (tuit) => {
         const now = new Date();
@@ -28,8 +28,9 @@ const Tuit = ({tuit, deleteTuit, likeTuit}) => {
         }
         return old;
     }
+
   return(
-    // <li onClick={() => navigate(`/tuit/${tuit._id}`)}
+    // <li onClick={() => navigate(`/tuit/${tuit._id}`)} <i onClick={() => bookmarkTuit(tuit._id)}
     <li className="p-2 ttr-tuit list-group-item d-flex rounded-0">
       <div className="pe-2">
         {
@@ -41,8 +42,10 @@ const Tuit = ({tuit, deleteTuit, likeTuit}) => {
       <div className="w-100">
           <i onClick={() => deleteTuit(tuit._id)} className="fas fa-remove fa-2x fa-pull-right"></i>
           <Link to={`/tuit/${tuit._id}`}>
-          <i className="float-end fas fa-circle-ellipsis me-1"></i>
+              <i className="float-end fas fa-circle-ellipsis me-1"></i>
           </Link>
+
+
         <h2
           className="fs-5">
           {tuit.postedBy && tuit.postedBy.username}
@@ -57,7 +60,7 @@ const Tuit = ({tuit, deleteTuit, likeTuit}) => {
           tuit.image &&
           <TuitImage tuit={tuit}/>
         }
-        <TuitStats tuit={tuit} likeTuit={likeTuit}/>
+        <TuitStats tuit={tuit} likeTuit={likeTuit} bookmark={bookmarkTuit}/>
       </div>
     </li>
   );
