@@ -6,6 +6,9 @@ import {useEffect, useState} from "react";
 import * as service from "../../services/bookmark-service";
 import BookmarkList from "../bookmarks/bookmarkList";
 
+import Tuits from "../tuits";
+
+
 const MyBookmarks = () => {
     const [bookmark, setBookmark] = useState([]);
     const findMyBookmarks = () =>
@@ -17,12 +20,16 @@ const MyBookmarks = () => {
     useEffect(findMyBookmarks, []);
     return(
         <div>
+
             <ul className="ttr-tuits list-group">
                 {
                         <BookmarkList tuits={bookmark}/>
                 }
             </ul>
         < /div>
+
+            <Tuits tuits={bookmark} refreshTuits={findMyBookmarks}/>
+        </div>
     );
 };
 
