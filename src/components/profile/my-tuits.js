@@ -1,3 +1,7 @@
+/**
+ * This file renders all the liked tuits of a specific user.
+ */
+
 import {useEffect, useState} from "react";
 import * as service from "../../services/tuits-service";
 import Tuits from "../tuits";

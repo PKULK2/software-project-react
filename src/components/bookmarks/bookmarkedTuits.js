@@ -1,12 +1,14 @@
+/**
+ * This file is used to display the contents of the bookmarked tuits.
+ */
+
 import React from "react";
-import * as bookmarkService from "../../services/bookmark-service";
 import {Link} from "react-router-dom";
 import TuitVideo from "../tuits/tuit-video";
 import TuitImage from "../tuits/tuit-image";
 import TuitStats from "../tuits/tuit-stats";
 
 const BookmarkedTuit = ({tuit}) => {
-    //const navigate = useNavigate();
     const daysOld = (tuit) => {
         const now = new Date();
         const nowMillis = now.getTime();

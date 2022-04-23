@@ -1,3 +1,7 @@
+/**
+ * This file is the service file which is used to call the APIS.
+ */
+
 import axios from "axios";
 
 const BASE_URL = process.env.REACT_APP_BASE_URL;

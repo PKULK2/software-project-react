@@ -1,7 +1,9 @@
+/**
+ * This file is used to bookmark a tuit
+ */
+
 import {useEffect, useState} from "react";
 import * as service from "../../services/bookmark-service";
-import Tuits from "../tuits";
-import BookmarkedTuit from "../bookmarks/bookmarkedTuits";
 import BookmarkList from "../bookmarks/bookmarkList";
 
 const MyBookmarks = () => {

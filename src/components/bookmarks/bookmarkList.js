@@ -1,7 +1,9 @@
+/**
+ * This file collects all the bookmarked tuits which will be displayed in
+ * the bookmarks section.
+ */
+
 import React, {useState} from "react";
-import * as likesService from "../../services/likes-service";
-import * as service from "../../services/tuits-service";
-import * as bookmarkService from "../../services/bookmark-service";
 import BookmarkedTuit from "./bookmarkedTuits";
 
 const BookmarkList = ({tuits = []}) => {
