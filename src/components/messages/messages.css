@@ -7,7 +7,7 @@
 
 .chat .my-message {
     float: right;
-    background-color: blue;
+    background-color: #0b5ed7;
 }
 
 .chat .not-my-message {
@@ -20,36 +20,27 @@
     max-height: 550px;
 }
 
-label.file-button {
-    width:120px;
-    height:40px;
-    overflow:hidden;
-    position:relative;
-    background-color:#ccc;
-}
-
-.inputfile {
-    width: 0.1px;
-    height: 0.1px;
-    opacity: 0;
-    overflow: hidden;
-    position: absolute;
-    z-index: -1;
-}
-
-.inputfile + label {
-    font-size: 1.25em;
-    font-weight: 700;
-    color: white;
-    background-color: black;
-    display: inline-block;
-}
-
-.inputfile:focus + label,
-.inputfile + label:hover {
-    background-color: red;
-}
-
 .send-message {
     margin-top: auto;
 }
+
+.chat-box {
+    min-height: 650px;
+}
+
+input[type="file"] {
+    display: none;
+}
+.custom-file-upload {
+    border: 1px solid #ccc;
+    display: inline-block;
+    padding: 6px 12px;
+    cursor: pointer;
+    color: #0b5ed7;
+}
+
+.upload-button {
+    float: left;
+}
+
+

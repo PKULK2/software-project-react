@@ -76,27 +76,30 @@ const SendMessageAndImage = () => {
     }
      return(
          <>
-            <div className="mb-2 my_scroll_div container">
+            <div className="mb-2 my_scroll_div chat-box">
                <DisplayMessages conversation={completeConversation}/>
             </div>
-            <div className="row send-message float-end">-c
-                <div className="col">
-                <span>
-                    <input multiple ref={filesRef} type="file"/>
+            <div className="row send-message">
+                <div className="col-3 float-end">
+                    <label className="custom-file-upload rounded float-left">
+                        <input ref={filesRef} type="file"/>
+                        <i className="fa fa-cloud-upload"/>
+                    </label>
                     <span>
-                        <i className="fa-solid fa-link" onClick={handleUpload}/>
+                        <button className=" custom-file-upload rounded" onClick={handleUpload}>
+                            <i className="fa-solid fa-upload"/>
+                        </button>
                     </span>
-                </span>
-                {/*    <label className="file-button">*/}
-                {/*        Browse For Image!*/}
-                {/*        <span><input type="file" id="myfile" name="myfile"/></span>*/}
-                {/*    </label>*/}
                 </div>
-                <div className="col">
-                    <input id="message" type="text" className="form-control rounded-pill w-10" placeholder="Message" onChange={(e)=> {setMessage(e.target.value)}}/>
-                </div>
-                <div className="col">
-                    <i onClick={sendMessage} className="fa-solid fa-paper-plane"/>
+                <div className="col-9">
+                    <div className="row">
+                        <div className="col-11">
+                            <input id="message" type="text" className="form-control rounded-pill w-10" placeholder="Message" onChange={(e)=> {setMessage(e.target.value)}}/>
+                        </div>
+                        <div className="col-1 mt-2">
+                            <i onClick={sendMessage} className="fa-solid fa-paper-plane" style={{color: "#0b5ed7"}}/>
+                        </div>
+                    </div>
                 </div>
             </div>
          </>
