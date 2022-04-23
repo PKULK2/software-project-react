@@ -1,0 +1,55 @@
+.chat .message {
+    max-width: 50%;
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.chat .my-message {
+    float: right;
+    background-color: blue;
+}
+
+.chat .not-my-message {
+    float: left;
+    background-color: grey;
+}
+
+.my_scroll_div{
+    overflow-y: auto;
+    max-height: 550px;
+}
+
+label.file-button {
+    width:120px;
+    height:40px;
+    overflow:hidden;
+    position:relative;
+    background-color:#ccc;
+}
+
+.inputfile {
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+}
+
+.inputfile + label {
+    font-size: 1.25em;
+    font-weight: 700;
+    color: white;
+    background-color: black;
+    display: inline-block;
+}
+
+.inputfile:focus + label,
+.inputfile + label:hover {
+    background-color: red;
+}
+
+.send-message {
+    margin-top: auto;
+}

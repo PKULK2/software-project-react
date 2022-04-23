@@ -4,12 +4,16 @@ import axios from "axios";
 const BASE_URL = process.env.REACT_APP_BASE_URL;
 const USERS_API = `${BASE_URL}/api/users`;
 
+const api = axios.create({
+    withCredentials: true
+});
+
 export const createUser = (user) =>
   axios.post(`${USERS_API}`, user)
     .then(response => response.data);
 
 export const findAllUsers = () =>
-    axios.get(USERS_API)
+    axios.get(`${USERS_API}`)
         .then(response => response.data);
 
 export const findUserById = (uid) =>
