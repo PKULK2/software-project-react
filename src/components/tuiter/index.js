@@ -9,12 +9,14 @@ import './tuiter.css'
 import EditProfile from "../profile/edit-profile";
 import Explore from "../explore";
 import Notifications from "../notifications";
-import Messages from "../messages";
+import Messages from "../messages/index";
 import Lists from "../lists";
 import More from "../more";
 import {Login} from "../profile/login";
 import Signup from "../profile/signup";
 import TuitScreen from "../tuits/tuit-screen";
+import Follow from "../follow/follow"
+import SendMessageAndImage from "../messages/SendMessageAndImage";
 
 function Tuiter () {
   return(
@@ -42,6 +44,8 @@ function Tuiter () {
               <Route path="/profile/edit" element={<EditProfile/>}/>
               <Route path="/more" element={<More/>}/>
               <Route path="/tuit/:tid" element={<TuitScreen/>}/>
+              <Route path="/users" element={<Follow/>}/>
+              <Route path="/message/:uid" element={<SendMessageAndImage/>}/>
             </Routes>
           </div>
           <div className="ttr-right-column">

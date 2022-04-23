@@ -1,0 +1,46 @@
+.chat .message {
+    max-width: 50%;
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.chat .my-message {
+    float: right;
+    background-color: #0b5ed7;
+}
+
+.chat .not-my-message {
+    float: left;
+    background-color: grey;
+}
+
+.my_scroll_div{
+    overflow-y: auto;
+    max-height: 550px;
+}
+
+.send-message {
+    margin-top: auto;
+}
+
+.chat-box {
+    min-height: 650px;
+}
+
+input[type="file"] {
+    display: none;
+}
+.custom-file-upload {
+    border: 1px solid #ccc;
+    display: inline-block;
+    padding: 6px 12px;
+    cursor: pointer;
+    color: #0b5ed7;
+}
+
+.upload-button {
+    float: left;
+}
+
+
