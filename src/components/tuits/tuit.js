@@ -3,6 +3,7 @@ import TuitStats from "./tuit-stats";
 import TuitImage from "./tuit-image";
 import TuitVideo from "./tuit-video";
 import {useNavigate, Link} from "react-router-dom";
+import * as bookmarkService from "../../services/bookmark-service";
 
 const Tuit = ({tuit, deleteTuit, likeTuit, bookmarkTuit}) => {
     const navigate = useNavigate();
@@ -28,6 +29,10 @@ const Tuit = ({tuit, deleteTuit, likeTuit, bookmarkTuit}) => {
         }
         return old;
     }
+
+    //console.log(tuit.bookmarkedTuit.postedBy.username)
+    const createBookmark = () =>
+        bookmarkService.createBookmark("me",tuit._id)
 
   return(
     // <li onClick={() => navigate(`/tuit/${tuit._id}`)} <i onClick={() => bookmarkTuit(tuit._id)}
@@ -60,7 +65,8 @@ const Tuit = ({tuit, deleteTuit, likeTuit, bookmarkTuit}) => {
           tuit.image &&
           <TuitImage tuit={tuit}/>
         }
-        <TuitStats tuit={tuit} likeTuit={likeTuit} bookmark={bookmarkTuit}/>
+
+        <TuitStats tuit={tuit} likeTuit={likeTuit} bookmarkTuit={createBookmark}/>
       </div>
     </li>
   );

@@ -1,11 +1,15 @@
-import React from "react";
+import React, {useState} from "react";
 import './tuits.css';
 import Tuit from "./tuit";
 import * as likesService from "../../services/likes-service";
 import * as service from "../../services/tuits-service";
+
+import * as bookmarkService from "../../services/bookmark-service";
+
 import * as bookmarkService from "../../services/bookmark-service"
 
 const Tuits = ({tuits = [], refreshTuits}) => {
+    //const [bookmark, setBookmark] = useState({});
     const likeTuit = (tuit) =>
         likesService.userLikesTuit("me", tuit._id)
             .then(refreshTuits)
