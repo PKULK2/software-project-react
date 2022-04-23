@@ -3,9 +3,6 @@ import './tuits.css';
 import Tuit from "./tuit";
 import * as likesService from "../../services/likes-service";
 import * as service from "../../services/tuits-service";
-
-import * as bookmarkService from "../../services/bookmark-service";
-
 import * as bookmarkService from "../../services/bookmark-service"
 
 const Tuits = ({tuits = [], refreshTuits}) => {
@@ -19,11 +16,6 @@ const Tuits = ({tuits = [], refreshTuits}) => {
         service.deleteTuit(tid)
             .then(refreshTuits);
 
-    const bookmarkTuit = (tuit) =>
-        bookmarkService.createBookmark("me", tuit._id)
-            .then(refreshTuits)
-            .catch(e => alert(e))
-
     return (
         <div>
           <ul className="ttr-tuits list-group">
@@ -33,7 +25,6 @@ const Tuits = ({tuits = [], refreshTuits}) => {
                         deleteTuit={deleteTuit}
                         likeTuit={likeTuit}
                         tuit={tuit}
-                        bookmarkTuit={bookmarkTuit}
                   />)
             }
           </ul>

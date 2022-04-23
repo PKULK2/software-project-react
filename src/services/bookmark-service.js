@@ -12,10 +12,6 @@ const api = axios.create({
 });
 
 export const createBookmark = (uid, tid) => {
-    return api.post(`${USER_URL}/${uid}/bookmark/tuits/${tid}`)
-
-
-export const createBookmark = (uid, tid) => {
     api.post(`${USER_URL}/${uid}/bookmark/tuits/${tid}`)
 
         .then(response => response.data)
