@@ -26,9 +26,6 @@ const MyBookmarks = () => {
                         <BookmarkList tuits={bookmark}/>
                 }
             </ul>
-        < /div>
-
-            <Tuits tuits={bookmark} refreshTuits={findMyBookmarks}/>
         </div>
     );
 };
