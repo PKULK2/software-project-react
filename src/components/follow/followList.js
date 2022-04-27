@@ -2,6 +2,7 @@ import React, {useState} from "react";
 import Users from "./users";
 
 const FollowList = ({users = []}) => {
+    let keyI = 0;
     return (
         <div className="my_scroll_div">
             <h1>People you can follow</h1>
@@ -9,7 +10,7 @@ const FollowList = ({users = []}) => {
                {
                    users.map(user => {
                        return(
-                           <Users myUsers={user}/>
+                           <Users key={++keyI} myUsers={user}/>
                        )
                    })
                }

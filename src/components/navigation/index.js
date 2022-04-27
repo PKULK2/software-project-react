@@ -10,14 +10,14 @@ function Navigation() {
     {label: 'Home', icon: 'fa-home', path: '/home'},
     {label: 'Explore', icon: 'fa-hashtag', path: '/explore'},
     {label: 'Notifications', icon: 'fa-bell', path: '/notifications'},
-    {label: 'Users', icon: 'fa-user', path: '/users'},
+    {label: 'Users', icon: 'fa-solid fa-users', path: '/users'},
     {label: 'Messages', icon: 'fa-envelope', path: '/messages'},
     {label: 'Bookmarks', icon: 'fa-bookmark', path: '/bookmarks'},
     {label: 'Lists', icon: 'fa-list', path: '/lists'},
-    {label: 'Profile', icon: 'fa-user', path: '/profile/mytuits'},
+    {label: 'Profile', icon: 'fa-solid fa-address-card', path: '/profile/mytuits'},
     {label: 'More', icon: 'fa-circle-ellipsis', path: '/more'},
     {label: 'Login', icon: 'fa-user', path: '/login'},
-    {label: 'Signup', icon: 'fa-user', path: '/signup'},
+    {label: 'Signup', icon: 'fa-solid fa-registered', path: '/signup'},
   ]
   return(
     <div className="ttr-navigation">

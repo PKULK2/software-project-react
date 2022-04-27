@@ -3,6 +3,7 @@ import {createFollow, findOne} from "../../services/follow-service";
 import blankImage from "../../images/blank-profile-picture-973460_1280.webp"
 import './users.css'
 const Users = ({myUsers}) => {
+    let keyI = 0;
     const [user, setUser] = useState({});
     const findOneFollow = () => {
         findOne("me", myUsers._id)
@@ -16,11 +17,11 @@ const Users = ({myUsers}) => {
     useEffect(findOneFollow, []);
     //findOneFollow();
     return (
-        <li className="list-group-item">
+        <li key={myUsers._id} className="list-group-item">
             <span>
                 <img style={{height: 40}} src={blankImage} className="rounded-circle"/>
             </span>
-            <span className="ms-2">{myUsers.username}</span>
+            <span className="ms-2 ttr-user-follow">{myUsers.username}</span>
             <span>
                 {(()=> {
                     if(user === null) {

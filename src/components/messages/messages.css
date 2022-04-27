@@ -43,4 +43,9 @@ input[type="file"] {
     float: left;
 }
 
+.images {
+    max-width: 200px;
+    height: 150px;
+}
+
 

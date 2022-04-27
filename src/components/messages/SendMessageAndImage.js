@@ -42,13 +42,17 @@ const SendMessageAndImage = () => {
         Object
             .entries(filesRef.current.files)
             .forEach(([key, file]) => {
-                service.uploadImage(file, params.uid)
-                    .then(imagesReceivedByUser)
+                service.uploadImage(file, params.uid, imagesSentByUser)
             })
     }
     const completeConversation = [
         ...messageSent,
         ...messageReceived,
+        ...imagesSent,
+        ...imagesReceived
+    ]
+
+    const complete = [
         ...imagesSent,
         ...imagesReceived
     ]

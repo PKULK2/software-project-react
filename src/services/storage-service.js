@@ -31,15 +31,14 @@ export const listAllImages = async (userId, receiverId) => {
         })
 }
 
-export const uploadImage = (file, receiverId) => {
+export const uploadImage = (file, receiverId, refreshImages) => {
     const imageRef = ref(
         storage, file.name)
     return uploadBytes(imageRef, file).then( (image) => {
         return getDownloadURL(imageRef).then(url => {
             let urlImage = url;
-             createImage("me", receiverId, {urlImage}).then(display => {
-                console.log("Image sent");
-            });
+             createImage("me", receiverId, {urlImage})
+                 .then(refreshImages);
         })
     })
 

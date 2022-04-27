@@ -14,7 +14,7 @@ export const createImage = (senderId, receiverId, image) =>
 export const imagesSentByUser = (senderId, receiverId) => {
     return api.get(`${MESSAGE_API}/${senderId}/images/user/${receiverId}`)
         .then(response => {
-            console.log(response.data, "RECEIVED")
+            //console.log(response.data, "RECEIVED")
             return response.data
         })
 }
@@ -22,7 +22,7 @@ export const imagesSentByUser = (senderId, receiverId) => {
 export const imagesSentToUser = (senderId, receiverId) =>
     api.get(`${MESSAGE_API}/${senderId}/user/images/${receiverId}`)
         .then(response => {
-            console.log(response.data, "SENT")
+            //console.log(response.data, "SENT")
             return response.data
         })
 
