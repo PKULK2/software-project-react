@@ -34,10 +34,11 @@ const BookmarkedTuit = ({tuit}) => {
 
     /*const createBookmark = () =>
         bookmarkService.createBookmark("me",tuit._id)*/
-
+let keyI = 0;
     return(
         // <li onClick={() => navigate(`/tuit/${tuit._id}`)}
-        <li className="p-2 ttr-tuit list-group-item d-flex rounded-0">
+
+        <li className="p-2 ttr-tuit list-group-item d-flex rounded-0" key = {++keyI}>
             <div className="pe-2">
                 {
                     tuit.postedBy &&
